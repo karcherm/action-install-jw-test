@@ -10,6 +10,6 @@ jobs:
       - uses: karcherm/action-install-jw@main
         with:
           wasm: true
-      - run: 'jwasm -?'
+      - run: 'jwasm -? || true'
         shell: bash
         
