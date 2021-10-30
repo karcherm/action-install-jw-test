@@ -24,8 +24,8 @@ jobs:
           jwlink: true
           jwlib: true
       - run: |
-          '(jwasm -? || true) | grep Sybase'
-          '(jwlib -? || true) | grep Sybase'
-          '(jwlink -? || true) | grep Sybase'
+          (jwasm -? || true) | grep Sybase
+          (jwlib -? || true) | grep Sybase
+          (jwlink -? || true) | grep Sybase
         shell: bash
         
