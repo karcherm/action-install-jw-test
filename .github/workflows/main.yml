@@ -1,0 +1,15 @@
+on:
+  workflow_dispatch
+
+jobs:
+  test_jwasm:
+    runs-on: ubuntu-latest
+    name: Test jwasm installation
+    steps:
+      - uses: actions/checkout@v2
+      - uses: karcherm/action-install-jw@1d4fc8447161de4c9aaf91fb63c30b1dbf3051f2
+        with:
+          wasm: true
+      - run: 'wasm'
+        shell: bash
+        
