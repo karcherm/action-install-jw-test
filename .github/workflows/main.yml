@@ -9,7 +9,23 @@ jobs:
       - uses: actions/checkout@v2
       - uses: karcherm/action-install-jw@main
         with:
-          wasm: true
-      - run: 'jwasm -? || true'
+          jwasm: true
+      - run: '(jwasm -? || true) | grep Sybase'
+        shell: bash
+        
+  test_all:
+    runs-on: ubuntu-latest
+    name: Test installation of all JW tools
+    steps:
+      - uses: actions/checkout@v2
+      - uses: karcherm/action-install-jw@main
+        with:
+          jwasm: true
+          jwlink: true
+          jwlib: true
+      - run: |
+          '(jwasm -? || true) | grep Sybase'
+          '(jwlib -? || true) | grep Sybase'
+          '(jwlink -? || true) | grep Sybase'
         shell: bash
         
