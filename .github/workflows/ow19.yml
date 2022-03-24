@@ -1,0 +1,14 @@
+on:
+  workflow_dispatch
+
+jobs:
+  test_ow
+    runs-on: ubuntu-latest
+    name: Test jwasm installation
+    steps:
+      - uses: actions/checkout@v2
+      - uses: karcherm/action-install-watcom@branch_for_squash
+      - run: |
+          echo "#include <stdio.h>" >> test.c
+          wcl test.c
+        shell: bash
