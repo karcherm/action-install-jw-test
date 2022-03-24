@@ -2,7 +2,7 @@ on:
   workflow_dispatch
 
 jobs:
-  test_ow
+  test_ow:
     runs-on: ubuntu-latest
     name: Test jwasm installation
     steps:
