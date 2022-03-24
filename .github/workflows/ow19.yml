@@ -7,7 +7,7 @@ jobs:
     name: Test jwasm installation
     steps:
       - uses: actions/checkout@v2
-      - uses: karcherm/action-install-watcom@branch_for_squash
+      - uses: karcherm/action-install-watcom@main
       - run: |
           echo "#include <stdio.h>" >> test.c
           wcl test.c
