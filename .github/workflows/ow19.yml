@@ -4,11 +4,15 @@ on:
 jobs:
   test_ow:
     runs-on: ubuntu-latest
-    name: Test jwasm installation
+    name: Test OpenWatcom installation
     steps:
       - uses: actions/checkout@v2
       - uses: karcherm/action-install-watcom@main
       - run: |
-          echo "#include <stdio.h>" >> test.c
-          wcl test.c
+          echo "#include <stdio.h>" > hw.c
+          echo 'int main(void) { puts("Hello world"); return 0; }' >> hw.c
+          wcl hw.c
         shell: bash
+      - uses: actions/upload-artifact@v3
+        with:
+          path: hw.exe
